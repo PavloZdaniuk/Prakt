@@ -1,3 +1,57 @@
-12345676
-grfyjtydgttukg
-лтлаптлотипл
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+    }
+        using System;
+
+class Program
+    {
+        static void Main()
+        {
+            int[] numbers = new int[10];
+            int smallestPositive = int.MaxValue;
+
+            Console.WriteLine("Введіть 10 цілих чисел:");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"Елемент {i + 1}: ");
+                if (int.TryParse(Console.ReadLine(), out int inputNumber))
+                {
+                    numbers[i] = inputNumber;
+                    if (inputNumber > 0 && inputNumber < smallestPositive)
+                    {
+                        smallestPositive = inputNumber;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Некоректний ввід. Введіть ціле число.");
+                    i--; // Повторити ввід для поточного елементу
+                }
+            }
+
+            if (smallestPositive == int.MaxValue)
+            {
+                Console.WriteLine("Ви не ввели жодного додатнього числа.");
+            }
+            else
+            {
+                Console.WriteLine($"Найменше додатнє число в списку: {smallestPositive}");
+            }
+        }
+    }
+
+    static void Main(string[] args)
+        {
+        }
+    }
+}
+
